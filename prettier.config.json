@@ -1,0 +1,9 @@
+{
+  "prettier": {
+    "arrowParens": "avoid",
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  }
+}
