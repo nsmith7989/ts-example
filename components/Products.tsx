@@ -26,45 +26,41 @@ const PRODUCTS_QUERY = gql`
   }
 `
 
-// easy way
 class ProductsDataContainer extends Query<ProductsQueryData> {}
+// can also be <Query<ProductsQueryData, {}> {...} </Query>
 
-export default () => (
-  <ProductsDataContainer query={PRODUCTS_QUERY}>
-    {({ data, loading, error }) => {
-      if (loading && !data) {
-        return <p>loading....</p>
-      }
+export default () => {
+  return (
+    <ProductsDataContainer query={PRODUCTS_QUERY}>
+      {({ data, loading, error }) => {
+        // render props!!!
+        if (loading && !data) {
+          return <p>loading</p>
+        }
 
-      if (error) {
-        console.log(error)
-        return <p>whoops, error</p>
-      }
+        if (error) {
+          console.log(error)
+          return <p>whoops, error</p>
+        }
 
-      // put your mouse over "data.allProducts", you will see it's typed
-      const listAllProducts = data.allProducts.map(
-        (product: Product, index) => {
-          // try destructuring this next commented line, see how typescript throws an error
-          // const { id, manufacturer, location } = product;
-          const { id, name, price } = product
-
-          return (
-            <>
-              <hr />
+        // put your mouse over "data.allProducts", you will see it's typed
+        const listAllProducts = data.allProducts.map(
+          (product: Product, index) => {
+            // try destructuring this next commented line, see how typescript throws an error
+            // const { id, manufacturer, location } = product;
+            const { id, name, price } = product
+            return (
               <ul key={index}>
                 <li>{id}</li>
                 <li>{name}</li>
                 <li>{price}</li>
               </ul>
-            </>
-          )
-        }
-      )
+            )
+          }
+        )
 
-      return <div>{listAllProducts}</div>
-    }}
-  </ProductsDataContainer>
-)
-
-// can also be
-// return <Query<ProductsQueryData, {}> {...} </Query>
+        return <div>{listAllProducts}</div>
+      }}
+    </ProductsDataContainer>
+  )
+}
