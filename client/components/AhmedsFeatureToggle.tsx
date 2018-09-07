@@ -22,7 +22,7 @@ interface FeatureFlagVariables {
 
 export const QueryFeatureToggle = gql`
   query FeatureToggles($names: [String]!) {
-    featureToggles(names: $names) {
+    featureToggles(names: $names) @client {
       name
       enabled
     }
