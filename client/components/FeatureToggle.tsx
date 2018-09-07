@@ -17,16 +17,10 @@ export type FeatureToggleProps = {
   name: string
 }
 
-export const makeFeatureToggleConsumer = (
-  toggles: string[]
-): React.StatelessComponent<FeatureToggleProps> => (
+export const makeFeatureToggleConsumer = (toggles: string[]) => (
   props: FeatureToggleProps
 ) => (
-  <Query
-    query={QueryFeatureToggle}
-    fetchPolicy="cache-only"
-    variables={{ names: toggles }}
-  >
+  <Query query={QueryFeatureToggle} variables={{ names: toggles }}>
     {({ data, loading, error }) => {
       if (loading) {
         return null
