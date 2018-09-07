@@ -1,0 +1,15 @@
+{
+    "extends": ["tslint-config-prettier"],
+    "rules": {
+      "strictFunctionTypes": false,
+      "no-use-before-declare": false,
+      "space-before-function-paren": false,
+      "exclude": [
+        "server/generated/*",
+        "node_modules",
+        "**/generated*",
+        "**/*.spec.ts"
+      ]
+    }
+  }
+  

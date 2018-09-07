@@ -1,0 +1,46 @@
+{
+  "name": "ts-example",
+  "version": "0.0.1",
+  "description": "ts-example",
+  "author": "Ahmed Alahmady",
+  "scripts": {
+    "build": "next build",
+    "deploy": "next start",
+    "dev": "next",
+    "start": "npm run build && npm run deploy",
+    "format": "prettier --write --ignore-path .gitignore \"*/**/*.{js,jsx,ts,tsx}\" \"server/*/**/*.js\" \"pages/*.js\""
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "dependencies": {
+    "@zeit/next-typescript": "1.1.0",
+    "apollo-boost": "^0.1.15",
+    "dotenv-webpack": "1.5.7",
+    "dotenv": "6.0.0",
+    "isomorphic-unfetch": "2.1.1",
+    "next": "6.1.2",
+    "react-apollo": "2.1.11",
+    "react-dom": "^16.5.0",
+    "react": "16.5.0",
+    "styled-components": "3.4.5",
+    "idx": "2.4.0"
+  },
+  "devDependencies": {
+    "@types/next": "6.1.4",
+    "@types/react-dom": "16.0.7",
+    "@types/react": "16.4.13",
+    "babel-plugin-lodash": "3.3.4",
+    "babel-plugin-styled-components": "1.6.3",
+    "graphql-tag": "2.9.2",
+    "graphql": "0.13.2",
+    "next-compose-plugins": "2.1.1",
+    "prettier": "1.14.2",
+    "prop-types": "15.6.2",
+    "typescript": "3.0.3"
+  }
+}

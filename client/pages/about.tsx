@@ -13,11 +13,6 @@ const Container = styled.div`
 
 export default () => (
   <Container>
-    <Goodbye
-      name="random"
-      onClick={() => {
-        console.log('hello')
-      }}
-    />
+    <Goodbye name="random" />
   </Container>
 )

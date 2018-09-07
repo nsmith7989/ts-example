@@ -1,0 +1,8 @@
+type Query {
+  featureToggles(names: [String]): [FeatureToggle]
+}
+
+type FeatureToggle {
+  name: String!
+  enabled: Boolean
+}

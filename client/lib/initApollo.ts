@@ -16,7 +16,7 @@ function create(initialState: any) {
     connectToDevTools: isBrowser,
     ssrMode: !isBrowser, // Disables forceFetch on the server (so queries are only run once)
     link: new HttpLink({
-      uri: 'https://fakerql.com/graphql' // Server URL (must be absolute)
+      uri: process.env.GRAPHQL_URI // Server URL (must be absolute)
     }),
     cache: new InMemoryCache().restore(initialState || {})
   })
