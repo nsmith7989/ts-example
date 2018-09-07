@@ -43,5 +43,8 @@
     "tslint": "5.11.0",
     "typescript": "3.0.3",
     "tslint-config-prettier": "1.15.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.4.13"
   }
 }

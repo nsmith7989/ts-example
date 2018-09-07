@@ -17,7 +17,9 @@ export type FeatureToggleProps = {
   name: string
 }
 
-export const makeFeatureToggleConsumer = (toggles: string[]) => (
+export const makeFeatureToggleConsumer = (
+  toggles: string[]
+): React.StatelessComponent<FeatureToggleProps> => (
   props: FeatureToggleProps
 ) => (
   <Query
