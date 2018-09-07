@@ -25,18 +25,6 @@ export default WithData(() => {
     <Container>
       <Hello>Hello, World!</Hello>
       <Goodbye name={'visitor'} />
-      <Query
-        query={QueryFeatureToggle}
-        variables={{ names: ['A', 'B', 'C', 'D'] }}
-      >
-        {({ data }) => {
-          if (data) {
-            console.log('data: ', data)
-          }
-
-          return null
-        }}
-      </Query>
     </Container>
   )
 })

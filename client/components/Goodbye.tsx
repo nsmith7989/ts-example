@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { FeatureToggleConsumer, A } from 'lib/setupFeatureToggles'
 
 interface Props {
   name: string
@@ -20,13 +21,19 @@ class Goodbye extends React.Component<Props, State> {
   }
 
   render() {
-    const { name } = this.props
     return (
-      <button onClick={this.handleClick}>
-        <label>
-          hello {name}, the current count is: {this.state.count}
-        </label>
-      </button>
+      <FeatureToggleConsumer name={A}>
+        {enabled => {
+          if (!enabled) return null
+          return (
+            <button onClick={this.handleClick}>
+              <label>
+                hello {name}, the current count is: {this.state.count}
+              </label>
+            </button>
+          )
+        }}
+      </FeatureToggleConsumer>
     )
   }
 }
